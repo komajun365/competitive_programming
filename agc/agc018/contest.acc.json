@@ -1,0 +1,75 @@
+{
+  "contest": {
+    "id": "agc018",
+    "title": "AtCoder Grand Contest 018",
+    "url": "https://atcoder.jp/contests/agc018"
+  },
+  "tasks": [
+    {
+      "id": "agc018_a",
+      "label": "A",
+      "title": "Getting Difference",
+      "url": "https://atcoder.jp/contests/agc018/tasks/agc018_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc018_b",
+      "label": "B",
+      "title": "Sports Festival",
+      "url": "https://atcoder.jp/contests/agc018/tasks/agc018_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc018_c",
+      "label": "C",
+      "title": "Coins",
+      "url": "https://atcoder.jp/contests/agc018/tasks/agc018_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc018_d",
+      "label": "D",
+      "title": "Tree and Hamilton Path",
+      "url": "https://atcoder.jp/contests/agc018/tasks/agc018_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc018_e",
+      "label": "E",
+      "title": "Sightseeing Plan",
+      "url": "https://atcoder.jp/contests/agc018/tasks/agc018_e",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc018_f",
+      "label": "F",
+      "title": "Two Trees",
+      "url": "https://atcoder.jp/contests/agc018/tasks/agc018_f",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

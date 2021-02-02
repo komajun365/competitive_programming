@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc095",
+    "title": "AtCoder Regular Contest 095",
+    "url": "https://atcoder.jp/contests/arc095"
+  },
+  "tasks": [
+    {
+      "id": "arc095_a",
+      "label": "C",
+      "title": "Many Medians",
+      "url": "https://atcoder.jp/contests/arc095/tasks/arc095_a",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc095_b",
+      "label": "D",
+      "title": "Binomial Coefficients",
+      "url": "https://atcoder.jp/contests/arc095/tasks/arc095_b",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc095_c",
+      "label": "E",
+      "title": "Symmetric Grid",
+      "url": "https://atcoder.jp/contests/arc095/tasks/arc095_c",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc095_d",
+      "label": "F",
+      "title": "Permutation Tree",
+      "url": "https://atcoder.jp/contests/arc095/tasks/arc095_d",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

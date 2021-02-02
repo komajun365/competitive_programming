@@ -1,0 +1,5 @@
+n = int(input())
+a = map(int,input().split())
+div_a = list(map(lambda x: 1/x,a))
+ans = 1/sum(div_a)
+print(ans)

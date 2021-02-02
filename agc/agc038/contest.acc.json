@@ -1,0 +1,75 @@
+{
+  "contest": {
+    "id": "agc038",
+    "title": "AtCoder Grand Contest 038",
+    "url": "https://atcoder.jp/contests/agc038"
+  },
+  "tasks": [
+    {
+      "id": "agc038_a",
+      "label": "A",
+      "title": "01 Matrix",
+      "url": "https://atcoder.jp/contests/agc038/tasks/agc038_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc038_b",
+      "label": "B",
+      "title": "Sorting a Segment",
+      "url": "https://atcoder.jp/contests/agc038/tasks/agc038_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc038_c",
+      "label": "C",
+      "title": "LCMs",
+      "url": "https://atcoder.jp/contests/agc038/tasks/agc038_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc038_d",
+      "label": "D",
+      "title": "Unique Path",
+      "url": "https://atcoder.jp/contests/agc038/tasks/agc038_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc038_e",
+      "label": "E",
+      "title": "Gachapon",
+      "url": "https://atcoder.jp/contests/agc038/tasks/agc038_e",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc038_f",
+      "label": "F",
+      "title": "Two Permutations",
+      "url": "https://atcoder.jp/contests/agc038/tasks/agc038_f",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

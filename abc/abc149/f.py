@@ -1,0 +1,101 @@
+# a,b = map(int,input().split())
+# a = list(map(int,input().split()))
+# a = [list(map(int,input().split())) for _ in range(n)]
+
+import sys
+import os
+f = open('../../input.txt', 'r')
+sys.stdin = f
+
+n = int(input())
+mod = 10**9 + 7
+
+# 前準備
+import sys
+input = sys.stdin.readline
+from collections import deque
+
+graph = [[] for _ in range(n+1)]
+for _ in range(n-1):
+    a,b = map(int,input().split())
+    graph[a].append(b)
+    graph[b].append(a)
+
+ini = 0
+
+# calcの定義 : 2辺を合わせる演算
+def calc(a,b):
+    return a+b
+
+# dp1の更新
+def calc1(c,p):
+    p_num = ini
+    for i in graph[c]:
+        if i == p:
+            continue
+        p_num = calc(p_num, dp1[i])
+    dp1[c] = (p_num+1) % mod
+
+# dp2の更新　累積和チックにすることでうに対策。
+def calc2(p):
+    arr = [dp1[c] if c != parent[p] else dp2[p] for c in graph[p]]
+
+    left = [ini]
+    for i in arr[:-1]:
+        left.append( calc(left[-1], i ) )
+    right = [ini]
+    for i in arr[:0:-1]:
+        right.append( calc(right[-1], i) )
+    right = right[::-1]
+
+    prod = []
+    for a,b in zip(left,right):
+        prod.append( calc(a,b) )
+
+    for c,x in zip(graph[p], prod):
+        if(c != parent[p]):
+            dp2[c] = (x + 1) % mod
+
+
+# 根から探索して親と探索順を記録
+root = 1
+order = []
+parent = [0] * (n+1)
+stack = deque()
+stack.append(root)
+while stack:
+    x = stack.pop()
+    order.append(x)
+    for y in graph[x]:
+        if y == parent[x]:
+            continue
+        stack.append(y)
+        parent[y] = x
+
+# 親→子の値を算出
+dp1 = [0] * (n+1)
+for i in order[::-1]:
+    calc1(i, parent[i])
+
+# 子→親の値を算出
+dp2 = [0] * (n+1)
+for i in order:
+    calc2(i)
+
+ans = 0
+for i in range(1,n+1):
+    gr = graph[i]
+    if(len(gr) == 1):
+        continue
+    tmp = pow(2,n-1,mod) - 1
+    for v in gr:
+        if(v == parent[i]):
+            exp_num = dp2[i]
+        else:
+            exp_num = dp1[v]
+        tmp = (tmp - (pow(2, exp_num, mod)-1)) % mod
+    ans = (ans + tmp) % mod
+
+
+ans = ans * pow(pow(2,n,mod), mod-2, mod) % mod
+print(ans)

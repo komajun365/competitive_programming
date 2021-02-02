@@ -1,0 +1,75 @@
+{
+  "contest": {
+    "id": "agc032",
+    "title": "AtCoder Grand Contest 032",
+    "url": "https://atcoder.jp/contests/agc032"
+  },
+  "tasks": [
+    {
+      "id": "agc032_a",
+      "label": "A",
+      "title": "Limited Insertion",
+      "url": "https://atcoder.jp/contests/agc032/tasks/agc032_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc032_b",
+      "label": "B",
+      "title": "Balanced Neighbors",
+      "url": "https://atcoder.jp/contests/agc032/tasks/agc032_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc032_c",
+      "label": "C",
+      "title": "Three Circuits",
+      "url": "https://atcoder.jp/contests/agc032/tasks/agc032_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc032_d",
+      "label": "D",
+      "title": "Rotation Sort",
+      "url": "https://atcoder.jp/contests/agc032/tasks/agc032_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc032_e",
+      "label": "E",
+      "title": "Modulo Pairing",
+      "url": "https://atcoder.jp/contests/agc032/tasks/agc032_e",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc032_f",
+      "label": "F",
+      "title": "One Third",
+      "url": "https://atcoder.jp/contests/agc032/tasks/agc032_f",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

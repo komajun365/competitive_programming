@@ -1,0 +1,75 @@
+{
+  "contest": {
+    "id": "agc007",
+    "title": "AtCoder Grand Contest 007",
+    "url": "https://atcoder.jp/contests/agc007"
+  },
+  "tasks": [
+    {
+      "id": "agc007_a",
+      "label": "A",
+      "title": "Shik and Stone",
+      "url": "https://atcoder.jp/contests/agc007/tasks/agc007_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc007_b",
+      "label": "B",
+      "title": "Construct Sequences",
+      "url": "https://atcoder.jp/contests/agc007/tasks/agc007_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc007_c",
+      "label": "C",
+      "title": "Pushing Balls",
+      "url": "https://atcoder.jp/contests/agc007/tasks/agc007_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc007_d",
+      "label": "D",
+      "title": "Shik and Game",
+      "url": "https://atcoder.jp/contests/agc007/tasks/agc007_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc007_e",
+      "label": "E",
+      "title": "Shik and Travel",
+      "url": "https://atcoder.jp/contests/agc007/tasks/agc007_e",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc007_f",
+      "label": "F",
+      "title": "Shik and Copying String",
+      "url": "https://atcoder.jp/contests/agc007/tasks/agc007_f",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

@@ -29,53 +29,60 @@ it = iter(ab0)
 ab = [[a-1,b-1] for a,b in zip(it,it)]
 c = data[2*m:]
 
-while(True):
-    
-
-
-
-
-deg = [0] * n
-links = [set() for _ in range(n)]
+links = [dict() for _ in range(n)]
 for i in range(m):
     a,b = ab[i]
-    links[a].add([b,i])
-    links[b].add([a,i])
-    deg[a] += 1
-    deg[b] += 1
+    links[a][b] = [i,0]
+    links[b][a] = [i,1]
 
-# hq = []
-# for i,ci in enumerate(c):
-#     heappush(hq, ci * n + i)
+ans = [''] * m
+allow = {0:'->', 1:'<-'}
 
-ans = [-1] * m
-done = [0] * m
-def cut_c1():
-    cut = 0
-    stack = []
-    for i,ci in enumerate(c):
-        if ci == 1:
-            stack.append(i)
+largest = max(c)
+use = [0] * m
+
+while largest > 0:
+    for s in range(n):
+        if c[s] == largest:
+            break
     
-    while(stack):
-        i = stack.pop()
-        c[i] -= 1
-        while(links[i])]
-            j, m_idx = links[i].pop()
-            if ab[m_idx][0] == i:
-                ans[m_idx] = 0
+    group = set()
+    group.add(s)
+
+    def dfs(i):
+        for j,e in links[i].items():
+            if use[e[0]] > 0:
+                continue
+            if j in group:
+                ans[e[0]] = allow[e[1]]
+                use[e[0]] = 1
+                continue
+            if c[j] == largest:
+                ans[e[0]] = allow[e[1]]
+                use[e[0]] = 1
+                group.add(j)
+                dfs(j)
             else:
-                ans[m_idx] = 1
-            c[j] -= 1
-            links[c].remove([i,m_idx])
-            if c[j] == 1:
-                stack.append(j)
-            deg[i] -= 1
-            deg[j] -= 1
+                ans[e[0]] = allow[e[1]]
+                use[e[0]] = 1
+    
+    dfs(s)
 
+    for i in range(m):
+        if use[i] == 1:
+            a,b = ab[i]
+            links[a].pop(b)
+            links[b].pop(a)
+            use[i] = 2
+    
+    for i in group:
+        c[i] = 0
+    
+    largest = max(c)
 
-cut_c1()
+print('\n'.join(ans))
 
-check
+    
+
 
 

@@ -1,6 +1,24 @@
 # 素数系の関数を作っておく
 
 # 素因数分解
+# n=1の時に素因数1を出力しちゃうやつ
+# def factorization(n):
+#     arr = []
+#     temp = n
+#     for i in range(2, int(n**0.5//1)+1 ):
+#         if(temp%i == 0):
+#             count=0
+#             while( temp%i == 0):
+#                 count += 1
+#                 temp = temp // i
+#             arr.append([i, count])
+#     if(temp != 1):
+#         arr.append([temp, 1])
+#     if(arr == []):
+#         arr.append([n, 1])
+#     return arr
+
+# 素因数分解
 def factorization(n):
     arr = []
     temp = n
@@ -11,14 +29,14 @@ def factorization(n):
                 count += 1
                 temp = temp // i
             arr.append([i, count])
+        if temp==1:
+            break
 
     if(temp != 1):
         arr.append([temp, 1])
-
-    if(arr == []):
-        arr.append([n, 1])
-
+    
     return arr
+
 
 # 約数のリストを作る
 # sortはされてないのできをつけよう

@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc090",
+    "title": "AtCoder Regular Contest 090",
+    "url": "https://atcoder.jp/contests/arc090"
+  },
+  "tasks": [
+    {
+      "id": "arc090_a",
+      "label": "C",
+      "title": "Candies",
+      "url": "https://atcoder.jp/contests/arc090/tasks/arc090_a",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc090_b",
+      "label": "D",
+      "title": "People on a Line",
+      "url": "https://atcoder.jp/contests/arc090/tasks/arc090_b",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc090_c",
+      "label": "E",
+      "title": "Avoiding Collision",
+      "url": "https://atcoder.jp/contests/arc090/tasks/arc090_c",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc090_d",
+      "label": "F",
+      "title": "Number of Digits",
+      "url": "https://atcoder.jp/contests/arc090/tasks/arc090_d",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

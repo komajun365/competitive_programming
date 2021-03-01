@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc081",
+    "title": "AtCoder Regular Contest 081",
+    "url": "https://atcoder.jp/contests/arc081"
+  },
+  "tasks": [
+    {
+      "id": "arc081_a",
+      "label": "C",
+      "title": "Make a Rectangle",
+      "url": "https://atcoder.jp/contests/arc081/tasks/arc081_a",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc081_b",
+      "label": "D",
+      "title": "Coloring Dominoes",
+      "url": "https://atcoder.jp/contests/arc081/tasks/arc081_b",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc081_c",
+      "label": "E",
+      "title": "Don't Be a Subsequence",
+      "url": "https://atcoder.jp/contests/arc081/tasks/arc081_c",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc081_d",
+      "label": "F",
+      "title": "Flip and Rectangles",
+      "url": "https://atcoder.jp/contests/arc081/tasks/arc081_d",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

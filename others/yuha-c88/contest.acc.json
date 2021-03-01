@@ -1,0 +1,119 @@
+{
+  "contest": {
+    "id": "yuha-c88",
+    "title": "YUHA presents C88 謎解き×競技プログラミング 『ある勇者の物語』",
+    "url": "https://atcoder.jp/contests/yuha-c88"
+  },
+  "tasks": [
+    {
+      "id": "yuha_c88_a",
+      "label": "A",
+      "title": "エンド・オブ・ビギニング",
+      "url": "https://atcoder.jp/contests/yuha-c88/tasks/yuha_c88_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "yuha_c88_b",
+      "label": "B",
+      "title": "ハヌマーンの試練",
+      "url": "https://atcoder.jp/contests/yuha-c88/tasks/yuha_c88_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "yuha_c88_c",
+      "label": "C",
+      "title": "酒場の冒険者たち",
+      "url": "https://atcoder.jp/contests/yuha-c88/tasks/yuha_c88_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "yuha_c88_d",
+      "label": "D",
+      "title": "氷柱の上の聖剣",
+      "url": "https://atcoder.jp/contests/yuha-c88/tasks/yuha_c88_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "yuha_c88_e",
+      "label": "E",
+      "title": "必殺！無限覇王斬！",
+      "url": "https://atcoder.jp/contests/yuha-c88/tasks/yuha_c88_e",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "yuha_c88_f",
+      "label": "F",
+      "title": "やって来たぜ！魔王城！",
+      "url": "https://atcoder.jp/contests/yuha-c88/tasks/yuha_c88_f",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "yuha_c88_g",
+      "label": "G",
+      "title": "志なかばで死んだ勇者の名は…",
+      "url": "https://atcoder.jp/contests/yuha-c88/tasks/yuha_c88_g",
+      "directory": {
+        "path": "g",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "yuha_c88_h",
+      "label": "H",
+      "title": "恐怖！不幸を呼ぶ盾",
+      "url": "https://atcoder.jp/contests/yuha-c88/tasks/yuha_c88_h",
+      "directory": {
+        "path": "h",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "yuha_c88_i",
+      "label": "I",
+      "title": "姫への愛情と朽ちた兜",
+      "url": "https://atcoder.jp/contests/yuha-c88/tasks/yuha_c88_i",
+      "directory": {
+        "path": "i",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "yuha_c88_j",
+      "label": "J",
+      "title": "勇者最後の戦い！倒せ悪の大魔王！",
+      "url": "https://atcoder.jp/contests/yuha-c88/tasks/yuha_c88_j",
+      "directory": {
+        "path": "j",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

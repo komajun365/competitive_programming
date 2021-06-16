@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "code-festival-2014-morning-hard",
+    "title": "CODE FESTIVAL 2014 Hard",
+    "url": "https://atcoder.jp/contests/code-festival-2014-morning-hard"
+  },
+  "tasks": [
+    {
+      "id": "code_festival_morning_med_c",
+      "label": "A",
+      "title": "eject",
+      "url": "https://atcoder.jp/contests/code-festival-2014-morning-hard/tasks/code_festival_morning_med_c",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "code_festival_morning_med_d",
+      "label": "B",
+      "title": "ぽよぽよ",
+      "url": "https://atcoder.jp/contests/code-festival-2014-morning-hard/tasks/code_festival_morning_med_d",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "code_festival_morning_hard_c",
+      "label": "C",
+      "title": "宝探し 2",
+      "url": "https://atcoder.jp/contests/code-festival-2014-morning-hard/tasks/code_festival_morning_hard_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "code_festival_morning_hard_d",
+      "label": "D",
+      "title": "Rail Tour",
+      "url": "https://atcoder.jp/contests/code-festival-2014-morning-hard/tasks/code_festival_morning_hard_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

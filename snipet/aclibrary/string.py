@@ -7,21 +7,21 @@ string.hppの移植。
 '''
 
 
-def sa_naive(s: list):
+def sa_naive(s):
     n = len(s)
     sa = list(range(n))
     sa.sort(key=lambda x: s[x:])
     return sa
 
 
-def sa_doubling(s: list):
+def sa_doubling(s):
     n = len(s)
     n_plus = n + 10
     sa = list(range(n))
     rnk = s[::]
     tmp = [0] * n
     k = 1
-    while(k < n):
+    while k < n:
         def cmp(x):
             first = rnk[x] * n_plus
             second = -1 if (x + k >= n) else rnk[x + k]
@@ -35,24 +35,24 @@ def sa_doubling(s: list):
     return sa
 
 
-def sa_is(s: list, upper: int):
+def sa_is(s, upper):
     THRESHOLD_NAIVE = 10
     THRESHOLD_DOUBLING = 40
 
     n = len(s)
-    if(n == 0):
+    if n == 0:
         return []
-    elif(n == 1):
+    elif n == 1:
         return [0]
-    elif(n == 2):
-        if(s[0] < s[1]):
+    elif n == 2:
+        if s[0] < s[1]:
             return [0, 1]
         else:
             return [1, 0]
 
-    if(n < THRESHOLD_NAIVE):
+    if n < THRESHOLD_NAIVE:
         return sa_naive(s)
-    elif(n < THRESHOLD_DOUBLING):
+    elif n < THRESHOLD_DOUBLING:
         return sa_doubling(s)
 
     sa = [0] * n
@@ -62,13 +62,13 @@ def sa_is(s: list, upper: int):
     sum_l = [0] * (upper + 1)
     sum_s = [0] * (upper + 1)
     for i in range(n):
-        if(not ls[i]):
+        if not ls[i]:
             sum_s[s[i]] += 1
         else:
             sum_l[s[i] + 1] += 1
     for i in range(upper):
         sum_s[i] += sum_l[i]
-        if(i < upper):
+        if i < upper:
             sum_l[i + 1] += sum_s[i]
 
     def induce(lms: list):
@@ -76,7 +76,7 @@ def sa_is(s: list, upper: int):
         sa = [-1] * n
         buf = sum_s[::]
         for d in lms:
-            if(d == n):
+            if d == n:
                 continue
             sa[buf[s[d]]] = d
             buf[s[d]] += 1
@@ -85,55 +85,55 @@ def sa_is(s: list, upper: int):
         buf[s[n - 1]] += 1
         for i in range(n):
             v = sa[i]
-            if(v >= 1) & (not ls[v - 1]):
+            if v >= 1 and not ls[v - 1]:
                 sa[buf[s[v - 1]]] = v - 1
                 buf[s[v - 1]] += 1
         buf = sum_l[::]
         for i in range(n - 1, -1, -1):
             v = sa[i]
-            if(v >= 1) & (ls[v - 1]):
+            if v >= 1 and ls[v - 1]:
                 buf[s[v - 1] + 1] -= 1
                 sa[buf[s[v - 1] + 1]] = v - 1
 
     lms_map = [-1] * (n + 1)
     m = 0
     for i in range(1, n):
-        if(not ls[i - 1]) & (ls[i]):
+        if not ls[i - 1] and ls[i]:
             lms_map[i] = m
             m += 1
     lms = []
     for i in range(1, n):
-        if(not ls[i - 1]) & (ls[i]):
+        if not ls[i - 1] and ls[i]:
             lms.append(i)
 
     induce(lms)
 
-    if(m):
+    if m:
         sorted_lms = []
         for v in sa:
-            if(lms_map[v] != -1):
+            if lms_map[v] != -1:
                 sorted_lms.append(v)
         rec_s = [0] * m
         rec_upper = 0
         rec_s[lms_map[sorted_lms[0]]] = 0
         for i in range(1, m):
-            l, r = sorted_lms[i - 1:i + 1]
-            end_l = lms[lms_map[l] + 1] if (lms_map[l] + 1 < m) else n
-            end_r = lms[lms_map[r] + 1] if (lms_map[r] + 1 < m) else n
+            left, right = sorted_lms[i - 1:i + 1]
+            end_l = lms[lms_map[left] + 1] if (lms_map[left] + 1 < m) else n
+            end_r = lms[lms_map[right] + 1] if (lms_map[right] + 1 < m) else n
             same = True
-            if(end_l - l != end_r - r):
+            if end_l - left != end_r - right:
                 same = False
             else:
-                while(l < end_l):
-                    if(s[l] != s[r]):
+                while left < end_l:
+                    if s[left] != s[right]:
                         break
-                    l += 1
-                    r += 1
-                if(l == n):
+                    left += 1
+                    right += 1
+                if left == n:
                     same = False
-                elif(s[l] != s[r]):
+                elif s[left] != s[right]:
                     same = False
-            if(not same):
+            if not same:
                 rec_upper += 1
             rec_s[lms_map[sorted_lms[i]]] = rec_upper
 
@@ -149,27 +149,26 @@ def sa_is(s: list, upper: int):
 
 def suffix_array(s, upper: int = -1):
     n = len(s)
-    if(type(s) is list) & (upper >= 0):
-        assert (0 <= min(s)) & (max(s) <= upper)
+    if type(s) is list and upper >= 0:
+        assert 0 <= min(s) and max(s) <= upper
         return sa_is(s, upper)
 
-    elif(type(s) is list) & (upper == -1):
+    elif type(s) is list and upper == -1:
         idx = list(range(n))
         idx.sort(key=lambda x: s[x])
         s2 = [0] * n
         now = 0
-        s2[idx[0]] = now
-        for i in range(1, n):
-            if(s[idx[i - 1]] != s[idx[i]]):
+        for i in range(n):
+            if i and s[idx[i - 1]] != s[idx[i]]:
                 now += 1
-            s[idx[i]] = now
+            s2[idx[i]] = now
         return sa_is(s2, now)
 
-    elif(type(s) is str):
+    elif type(s) is str:
         s2 = [0] * n
         for i, si in enumerate(s):
             s2[i] = ord(si)
-        return sa_is(s2, max(s2))
+        return sa_is(s2, 255)
 
     else:
         print('type error')
@@ -179,7 +178,7 @@ def suffix_array(s, upper: int = -1):
 def lcp_array(s, sa: list):
     n = len(s)
     assert n >= 1
-    if(type(s) is str):
+    if type(s) is str:
         s2 = [0] * n
         for i, si in enumerate(s):
             s2[i] = ord(si)
@@ -191,13 +190,13 @@ def lcp_array(s, sa: list):
     lcp = [0] * (n - 1)
     h = 0
     for i in range(n):
-        if(h > 0):
+        if h > 0:
             h -= 1
-        if(rnk[i] == 0):
+        if rnk[i] == 0:
             continue
         j = sa[rnk[i] - 1]
-        while(j + h < n) & (i + h < n):
-            if(s[j + h] != s[i + h]):
+        while j + h < n and i + h < n:
+            if s[j + h] != s[i + h]:
                 break
             h += 1
         lcp[rnk[i] - 1] = h
@@ -206,9 +205,9 @@ def lcp_array(s, sa: list):
 
 def z_algorithm(s):
     n = len(s)
-    if(n == 0):
+    if n == 0:
         return []
-    if(type(s) is str):
+    if type(s) is str:
         s2 = [0] * n
         for i, si in enumerate(s):
             s2[i] = ord(si)
@@ -217,11 +216,11 @@ def z_algorithm(s):
     j = 0
     for i in range(1, n):
         z[i] = 0 if (j + z[j] <= i) else min(j + z[j] - i, z[i - j])
-        while(i + z[i] < n):
-            if(s[z[i]] != s[i + z[i]]):
+        while i + z[i] < n:
+            if s[z[i]] != s[i + z[i]]:
                 break
             z[i] += 1
-        if(j + z[j] < i + z[i]):
+        if j + z[j] < i + z[i]:
             j = i
     z[0] = n
     return z

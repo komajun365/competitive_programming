@@ -49,20 +49,17 @@ def com(n,k):
     return fac[n] * (finv[k] * finv[n-k] % mod) % mod
 
 
-ball_com = [1] * (n+1)
-for i in range(2,n+1):
-    ball_com[i] = ball_com[i-1] * com((k-1) * i, k-1) % mod
-
 dp = [0] * (n+1)
 dp[0] = 1
-for i in range(1,n+1):
-    for j in range(i):
-        dif = i-j
-        tot = dif*(k-1) + j*k
-        tmp = (com(tot, dif*(k-1)) - com(tot-1, dif*(k-1))) % mod
-        tmp = tmp * com(n-j,dif) % mod
-        dp[i] += ((dp[j] * tmp % mod) * ball_com[dif]) % mod
-    dp[i] %= mod
+for i in range(n):
+    tmp = dp[i]
+    for j in range(i+1,n+1):
+        tmp *= com( i*k + (j-i-1) * (k-1) + (k-2), k-2 )
+        tmp %= mod
+        dp[j] += tmp
+        dp[j] %= mod
+    print(dp)
 
-print(dp[-1])
-print(dp)
+ans = dp[-1] * fac[n] % mod
+print(ans)
+

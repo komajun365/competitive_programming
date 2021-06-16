@@ -1,225 +1,281 @@
-'''
-convolution
-convolution_llは動作未チェック
+def primitive_root(m):
+    """
+    整数mの最小原始根を計算する
 
-MODをグローバルで定義した後、（※）
-Convolutionクラスを生成し、
-Convolution.convolution(a,b)を実行して使う。
+    Parameters
+    ----------
+    m : int
+        2以上の整数
 
-※当初MODをクラス内のローカル変数にする予定だったが、
-　pypyでの実行速度が著しく悪化したためこのような形とした。
-（参考）
-・MODをグローバルで宣言した場合：800ms
-https://atcoder.jp/contests/practice2/submissions/16983541
-・MODをローカル変数にした場合：1425ms
-https://atcoder.jp/contests/practice2/submissions/16979135
+    Returns
+    -------
+    int
+        mの最小原始根
+    """
+    if m == 2:
+        return 1
+    if m == 167772161:
+        return 3
+    if m == 469762049:
+        return 3
+    if m == 754974721:
+        return 11
+    if m == 998244353:
+        return 3
 
-'''
+    divs = [2] + [0] * 19
+    cnt = 1
+    x = (m - 1) // 2
+    while x % 2 == 0:
+        x //= 2
 
-MOD = 998244353
-class Convolution:
-    def __init__(self):
-        # self.mod = mod
-        self.g = self.primitive_root(MOD)
-        self.first_butterfly = True
-        self.first_butterfly_inv = True
-        self.sum_e = [0] * 30
-        self.sum_ie = [0] * 30
-
-    # 原始根の取得
-    def primitive_root(self, m: int):
-        if (m == 2):
-            return 1
-        if (m == 167772161):
-            return 3
-        if (m == 469762049):
-            return 3
-        if (m == 754974721):
-            return 11
-        if (m == 998244353):
-            return 3
-        divs = [0] * 20
-        divs[0] = 2
-        cnt = 1
-        x = (m-1)//2
-        while(x % 2 == 0):
-            x //= 2
-        for i in range(3, x+1, 2):
-            if(i**2 > x):
-                break
-            if(x % i == 0):
-                divs[cnt] = i
-                cnt += 1
-                while(x % i == 0):
-                    x //= i
-        if(x > 1):
-            divs[cnt] = x
+    i = 3
+    while i**2 <= x:
+        if x % i == 0:
+            divs[cnt] = i
             cnt += 1
-        g = 2
-        while(True):
-            ok = True
-            for i in range(cnt):
-                if(pow(g, (m-1)//divs[i], m) == 1):
-                    ok = False
-                    break
-            if(ok):
-                return g
-            g += 1
+            while x % i == 0:
+                x //= i
 
-        print('error')
+        i += 2
+
+    if x > 1:
+        divs[cnt] = x
+        cnt += 1
+
+    g = 2
+    while True:
+        for i in range(cnt):
+            if pow(g, (m-1)//divs[i], m) == 1:
+                break
+
+        else:
+            return g
+
+        g += 1
+
+def ceil_pow2(n):
+    """
+    n <= 2**x を満たす最小のxを返却する。
+
+    Parameters
+    ----------
+    n : int
+        0以上の整数
+
+    Returns
+    -------
+    int
+        n <= 2**x を満たす最小のx
+
+    """
+    if n < 1:
         return 0
+    return (n-1).bit_length()
 
-    def butterfly(self, a: list):
-        # MOD = self.mod
+
+def bsf(n):
+    """
+    自然数を2bitで表現したときに、右から見て最初に1が立つ桁が何桁目かを返却する。
+    （0-indexed）
+
+    Parameters
+    ----------
+    n : int
+        1以上の整数
+
+    Returns
+    -------
+    int
+        2bitで表現したときに、右から見て最初に1が立つ桁（0-indexed）
+
+    """
+    return (n & -n).bit_length()-1
+
+
+class Convolution:
+    """
+    畳み込みを行う。
+    長さNの数列Aと長さMの数列Bから、長さ(N+M-1)の数列Cを計算する。
+    c_i = sum_{j=0}^{i} a_j * b_{i-j}
+
+    Parameters
+    ----------
+    mod : int
+        畳み込みを計算する際の法
+
+    Attributes
+    ----------
+    _first1 : bool
+        butterfly関数を初めて呼び出したかどうかを表すbool値
+    _first2 : bool
+        butterfly_inv関数を初めて呼び出したかどうかを表すbool値
+    _sum_e : list
+    _sum_ie : list
+        _sum_eの逆元のリスト
+    _mod : int
+        畳み込みを計算する際の法
+    _root : int
+        _modの最小原始根
+
+    Methods
+    -------
+    __init__(self, mod)
+        初期化
+    _butterfly(self, a)
+        バタフライ演算を実行する
+
+        Parameters
+        ----------
+        a : array_like
+            バタフライ演算を施す配列
+    _butterfly_inv(self, a)
+        バタフライ演算の逆演算を実行する
+
+        Parameters
+        ----------
+        a : array_like
+            バタフライ演算の逆演算を施す配列
+    convolution(self, a, b)
+        畳み込みを計算した結果の配列を返却する
+        a, bのいずれかの配列が空の場合は空のリストを返却する
+
+        Parameters
+        ----------
+        a, b : array_like
+            畳み込みを計算する対象となる2つの配列
+
+        Returns
+        -------
+        list
+            配列a, bに対して畳み込みを計算した結果
+
+    See Also
+    --------
+    https://github.com/atcoder/ac-library/blob/master/document_ja/convolution.md
+    """
+    def __init__(self, mod):
+        self._first1 = True
+        self._first2 = True
+        self._sum_e = [0] * 30
+        self._sum_ie = [0] * 30
+        self._mod = mod
+        self._root = primitive_root(mod)
+
+    def _butterfly(self, a):
         n = len(a)
-        h = (n-1).bit_length()
-        if(self.first_butterfly):
-            self.first_butterfly = False
+        h = ceil_pow2(n)
+        if self._first1:
+            self._first1 = False
             es = [0] * 30
             ies = [0] * 30
-            mod_m = MOD-1
-            cnt2 = (mod_m & -mod_m).bit_length() - 1
-            e = pow(self.g, mod_m >> cnt2, MOD)
-            ie = pow(e, MOD-2, MOD)
-            for i in range(cnt2-2, -1, -1):
+            m = self._mod - 1
+            cnt2 = bsf(m)
+            e = pow(self._root, m >> cnt2, self._mod)
+            ie = pow(e, self._mod - 2, self._mod)
+            for i in range(cnt2 - 1)[::-1]:
                 es[i] = e
                 ies[i] = ie
                 e *= e
-                e %= MOD
+                e %= self._mod
                 ie *= ie
-                ie %= MOD
+                ie %= self._mod
+
             now = 1
-            for i in range(cnt2-1):
-                self.sum_e[i] = (es[i] * now) % MOD
+            for i in range(cnt2 - 1):
+                self._sum_e[i] = es[i] * now % self._mod
                 now *= ies[i]
-                now %= MOD
-        for ph in range(1, h+1):
-            w = 1 << (ph-1)
-            p = 1 << (h-ph)
+                now %= self._mod
+
+        for ph in range(1, h + 1):
+            w = 1 << (ph - 1)
+            p = 1 << (h - ph)
             now = 1
             for s in range(w):
-                offset = s << (h-ph+1)
+                offset = s << (h - ph + 1)
                 for i in range(p):
-                    l = a[i + offset]
-                    r = a[i + offset + p] * now
-                    a[i + offset] = (l+r) % MOD
-                    a[i + offset + p] = (l-r) % MOD
-                now *= self.sum_e[(~s & -~s).bit_length() - 1]
-                now %= MOD
+                    left = a[i + offset]
+                    right = a[i + offset + p] * now
+                    a[i + offset] = (left + right) % self._mod
+                    a[i + offset + p] = (left - right) % self._mod
 
-    def butterfly_inv(self, a: list):
-        # MOD = self.mod
+                now *= self._sum_e[bsf(~s)]
+                now %= self._mod
+
+    def _butterfly_inv(self, a):
         n = len(a)
-        h = (n-1).bit_length()
-        if(self.first_butterfly_inv):
-            self.first_butterfly_inv = False
+        h = ceil_pow2(n)
+        if self._first2:
+            self._first2 = False
             es = [0] * 30
             ies = [0] * 30
-            mod_m = MOD-1
-            cnt2 = (mod_m & -mod_m).bit_length() - 1
-            e = pow(self.g, mod_m >> cnt2, MOD)
-            ie = pow(e, MOD-2, MOD)
-            for i in range(cnt2-2, -1, -1):
+            m = self._mod - 1
+            cnt2 = bsf(m)
+            e = pow(self._root, m >> cnt2, self._mod)
+            ie = pow(e, self._mod - 2, self._mod)
+            for i in range(cnt2 - 1)[::-1]:
                 es[i] = e
                 ies[i] = ie
                 e *= e
-                e %= MOD
+                e %= self._mod
                 ie *= ie
-                ie %= MOD
+                ie %= self._mod
+
             now = 1
-            for i in range(cnt2-1):
-                self.sum_ie[i] = (ies[i] * now) % MOD
+            for i in range(cnt2 - 1):
+                self._sum_ie[i] = ies[i] * now % self._mod
                 now *= es[i]
-                now %= MOD
-        for ph in range(h, 0, -1):
-            w = 1 << (ph-1)
-            p = 1 << (h-ph)
+                now %= self._mod
+
+        for ph in range(1, h + 1)[::-1]:
+            w = 1 << (ph - 1)
+            p = 1 << (h - ph)
             inow = 1
             for s in range(w):
-                offset = s << (h-ph+1)
+                offset = s << (h - ph + 1)
                 for i in range(p):
-                    l = a[i + offset]
-                    r = a[i + offset + p]
-                    a[i + offset] = (l+r) % MOD
-                    a[i + offset + p] = ((l - r) * inow) % MOD
-                inow *= self.sum_ie[(~s & -~s).bit_length() - 1]
-                inow %= MOD
+                    left = a[i + offset]
+                    right = a[i + offset + p]
+                    a[i + offset] = (left + right) % self._mod
+                    a[i + offset + p] = (
+                        (self._mod + left - right) * inow % self._mod
+                    )
+                inow *= self._sum_ie[bsf(~s)]
+                inow %= self._mod
 
-    def convolution(self, a: list, b: list):
-        # MOD = self.mod
+    def convolution(self, a, b):
         n = len(a)
         m = len(b)
-        if(n == 0) | (m == 0):
+        if n*m == 0:
             return []
-        if(min(n, m) <= 60):
-            if(n < m):
-                a, b = b, a
+
+        if min(n, m) <= 60:
+            if n < m:
                 n, m = m, n
-            ans = [0] * (n+m-1)
+                a, b = b, a
+
+            res = [0] * (n + m - 1)
             for i in range(n):
                 for j in range(m):
-                    ans[i+j] += a[i] * b[j]
-                    ans[i+j] %= MOD
-            return ans
+                    res[i + j] += a[i] * b[j]
+                    res[i + j] %= self._mod
 
-        z = 1 << (n+m-2).bit_length()
-        a += [0] * (z-n)
-        b += [0] * (z-m)
-        self.butterfly(a)
-        self.butterfly(b)
+            return res
+
+        z = 1 << ceil_pow2(n + m - 1)
+        a += [0] * (z - n)
+        b += [0] * (z - m)
+        self._butterfly(a)
+        self._butterfly(b)
         for i in range(z):
             a[i] *= b[i]
-            a[i] %= MOD
-        self.butterfly_inv(a)
-        a = a[:(n+m-1)]
-        iz = pow(z, MOD-2, MOD)
-        for i in range(n+m-1):
+            a[i] %= self._mod
+
+        self._butterfly_inv(a)
+        a = a[:n + m - 1]
+        iz = pow(z, self._mod - 2, self._mod)
+        for i in range(n + m - 1):
             a[i] *= iz
-            a[i] %= MOD
+            a[i] %= self._mod
+
         return a
-
-    def convolution_ll(self, a: list, b: list):
-        from math import gcd
-        global MOD
-        n = len(a)
-        m = len(b)
-        if(n == 0) | (m == 0):
-            return []
-
-        MOD1 = 754974721  # 2^24
-        MOD2 = 167772161  # 2^25
-        MOD3 = 469762049  # 2^26
-        M2M3 = MOD2 * MOD3
-        M1M3 = MOD1 * MOD3
-        M1M2 = MOD1 * MOD2
-        M1M2M3 = MOD1 * MOD2 * MOD3
-
-        i1 = gcd(M2M3, MOD1) * pow(M2M3 % MOD1, MOD1-2, MOD1) % MOD1
-        i2 = gcd(M1M3, MOD2) * pow(M1M3 % MOD2, MOD2-2, MOD2) % MOD2
-        i3 = gcd(M1M2, MOD3) * pow(M1M2 % MOD3, MOD3-2, MOD3) % MOD3
-
-        MOD = MOD1
-        A = a[::]
-        B = b[::]
-        self.__init__()
-        c1 = self.convolution(A, B)
-        MOD = MOD2
-        # A = a[::]
-        # B = b[::]
-        self.__init__()
-        c2 = self.convolution(A, B)
-        MOD = MOD3
-        # A = a[::]
-        # B = b[::]
-        self.__init__()
-        c3 = self.convolution(A, B)
-
-        c = [0] * (n+m-1)
-        for i in range(n+m-1):
-            x = 0
-            x += (c1[i] * i1) % MOD1 * M2M3
-            x += (c2[i] * i2) % MOD2 * M1M3
-            x += (c3[i] * i3) % MOD3 * M1M2
-            c[i] = x % M1M2M3
-
-        return c

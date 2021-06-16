@@ -15,3 +15,22 @@
 # import os
 # f = open('../../../input.txt', 'r')
 # sys.stdin = f
+
+s = input()
+n = len(s)
+
+if n==2:
+    print('dict')
+    exit()
+
+cnt = 0
+for i in range(1,n-1):
+    if s[i] == '{':
+        cnt += 1
+    elif s[i] == '}':
+        cnt -= 1
+    elif s[i] == ':' and cnt == 0:
+        print('dict')
+        exit()
+
+print('set')

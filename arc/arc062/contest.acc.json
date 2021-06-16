@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc062",
+    "title": "AtCoder Regular Contest 062",
+    "url": "https://atcoder.jp/contests/arc062"
+  },
+  "tasks": [
+    {
+      "id": "arc062_a",
+      "label": "C",
+      "title": "AtCoDeer and Election Report",
+      "url": "https://atcoder.jp/contests/arc062/tasks/arc062_a",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc062_b",
+      "label": "D",
+      "title": "AtCoDeer and Rock-Paper",
+      "url": "https://atcoder.jp/contests/arc062/tasks/arc062_b",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc062_c",
+      "label": "E",
+      "title": "Building Cubes with AtCoDeer",
+      "url": "https://atcoder.jp/contests/arc062/tasks/arc062_c",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc062_d",
+      "label": "F",
+      "title": "Painting Graphs with AtCoDeer",
+      "url": "https://atcoder.jp/contests/arc062/tasks/arc062_d",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

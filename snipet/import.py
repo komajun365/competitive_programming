@@ -31,3 +31,7 @@ import itertools
 # 再帰メモ化
 from functools import lru_cache
 @lru_cache(maxsize=10**9)
+
+# 
+if __name__ == "__main__":
+    main()

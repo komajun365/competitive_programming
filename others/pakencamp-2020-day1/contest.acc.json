@@ -1,0 +1,174 @@
+{
+  "contest": {
+    "id": "pakencamp-2020-day1",
+    "title": "パ研合宿2020　第1日「SpeedRun」",
+    "url": "https://atcoder.jp/contests/pakencamp-2020-day1"
+  },
+  "tasks": [
+    {
+      "id": "pakencamp_2020_day1_a",
+      "label": "A",
+      "title": "パ研合宿2020",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_b",
+      "label": "B",
+      "title": "パ研合宿2403",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_c",
+      "label": "C",
+      "title": "皆勤賞",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_d",
+      "label": "D",
+      "title": "立方体を壊せ！",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_e",
+      "label": "E",
+      "title": "Amary",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_e",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_f",
+      "label": "F",
+      "title": "Fibonaccyan",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_f",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_g",
+      "label": "G",
+      "title": "同意書",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_g",
+      "directory": {
+        "path": "g",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_h",
+      "label": "H",
+      "title": "その計算、合ってますか？",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_h",
+      "directory": {
+        "path": "h",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_i",
+      "label": "I",
+      "title": "くねくね",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_i",
+      "directory": {
+        "path": "i",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_j",
+      "label": "J",
+      "title": "Output-only",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_j",
+      "directory": {
+        "path": "j",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_k",
+      "label": "K",
+      "title": "Gcd of Sum",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_k",
+      "directory": {
+        "path": "k",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_l",
+      "label": "L",
+      "title": "のびたす",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_l",
+      "directory": {
+        "path": "l",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_m",
+      "label": "M",
+      "title": "貢ぎ物",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_m",
+      "directory": {
+        "path": "m",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_n",
+      "label": "N",
+      "title": "背の順",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_n",
+      "directory": {
+        "path": "n",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "pakencamp_2020_day1_o",
+      "label": "O",
+      "title": "Xor Sum Sum",
+      "url": "https://atcoder.jp/contests/pakencamp-2020-day1/tasks/pakencamp_2020_day1_o",
+      "directory": {
+        "path": "o",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

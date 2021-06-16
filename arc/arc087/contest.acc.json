@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc087",
+    "title": "AtCoder Regular Contest 087",
+    "url": "https://atcoder.jp/contests/arc087"
+  },
+  "tasks": [
+    {
+      "id": "arc087_a",
+      "label": "C",
+      "title": "Good Sequence",
+      "url": "https://atcoder.jp/contests/arc087/tasks/arc087_a",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc087_b",
+      "label": "D",
+      "title": "FT Robot",
+      "url": "https://atcoder.jp/contests/arc087/tasks/arc087_b",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc087_c",
+      "label": "E",
+      "title": "Prefix-free Game",
+      "url": "https://atcoder.jp/contests/arc087/tasks/arc087_c",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc087_d",
+      "label": "F",
+      "title": "Squirrel Migration",
+      "url": "https://atcoder.jp/contests/arc087/tasks/arc087_d",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

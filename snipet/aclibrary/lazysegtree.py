@@ -1,5 +1,5 @@
 '''
-segtree
+lazysegtree
 引数
 ・op : 二項演算関数
 　　　　区間最大：max、区間和：sum など

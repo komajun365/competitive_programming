@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc070",
+    "title": "AtCoder Regular Contest 070",
+    "url": "https://atcoder.jp/contests/arc070"
+  },
+  "tasks": [
+    {
+      "id": "arc070_a",
+      "label": "C",
+      "title": "Go Home",
+      "url": "https://atcoder.jp/contests/arc070/tasks/arc070_a",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc070_b",
+      "label": "D",
+      "title": "No Need",
+      "url": "https://atcoder.jp/contests/arc070/tasks/arc070_b",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc070_c",
+      "label": "E",
+      "title": "NarrowRectangles",
+      "url": "https://atcoder.jp/contests/arc070/tasks/arc070_c",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc070_d",
+      "label": "F",
+      "title": "HonestOrUnkind",
+      "url": "https://atcoder.jp/contests/arc070/tasks/arc070_d",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

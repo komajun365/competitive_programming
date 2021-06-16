@@ -1,61 +1,68 @@
-'''
-長さ N の配列に対し、
-・要素の 1 点変更(加算)
-・区間の要素の総和
-を O(logN) で求めることが出来るデータ構造です。
-
-要素はintとしておきます。
-※modを設定し、modintっぽく振る舞うようにしておきます。
-
-初期値は0。
-
-'''
-
-
 class FenwickTree:
-    def __init__(self, n: int, mod: int = 0):
-        self.__mod = mod
-        self.__n = n
-        self.__data = [0] * self.__n
+    """
+    長さ N の配列に対し、
+    ・要素の 1 点変更
+    ・区間の要素の総和
+    を O(logN) で求めることが出来るデータ構造です。
+    https://atcoder.github.io/ac-library/master/document_ja/fenwicktree.html
 
-    def add(self, p: int, x: int):
-        assert (0 <= p) & (p < self.__n)
-        if(self.__mod == 0):
-            self.__add_mod0(p, x)
-        else:
-            self.__add_mod(p, x)
+    本家は要素の型でmodintを指定することができるが、本実装はintに限る。
+    (floatでも動くと思われるが、保証はしない)
 
-    def __add_mod0(self, p: int, x: int):
+    Parameters
+    ----------
+    n : int
+        配列の長さ
+
+    Attributes
+    ----------
+    _n : 配列の長さ
+    _data : 管理する配列
+
+    Methods
+    -------
+    __init__(self, n=0)
+        初期化
+    add(self, p, x)
+        p番目の要素にxを加算する
+        Parameters
+        ----------
+        p : int
+             0 <= p < self._n
+             加算する要素の番号
+        x : int
+            加算する値
+    sum(self, left, right)
+        _data[left] + _data[left+1] + .. + _data[right-1]を計算する
+        Parameters
+        ----------
+        left : int
+        right : int
+    _sum(self, right)
+        _data[0] + _data[1] + .. + _data[right-1]を計算する
+        Parameters
+        ----------
+        right : int
+    """
+    def __init__(self, n=0):
+        assert n >= 0
+        self._n = n
+        self._data = [0] * self._n
+
+    def add(self, p, x):
+        assert 0 <= p < self._n
         p += 1
-        while(p <= self.__n):
-            self.__data[p - 1] += x
+        while p <= self._n:
+            self._data[p - 1] += x
             p += p & -p
 
-    def __add_mod(self, p: int, x: int):
-        p += 1
-        while(p <= self.__n):
-            self.__data[p - 1] += x
-            self.__data[p - 1] %= self.__mod
-            p += p & -p
+    def sum(self, left, right):
+        assert 0 <= left <= right <= self._n
+        return self._sum(right) - self._sum(left)
 
-    def sum(self, l: int, r: int):
-        assert (0 <= l) & (l <= r) & (r <= self.__n)
-        if(self.__mod == 0):
-            return self.__sum_mod0(r) - self.__sum_mod0(l)
-        else:
-            return (self.__sum_mod(r) - self.__sum_mod(l)) % self.__mod
-
-    def __sum_mod0(self, r: int):
+    def _sum(self, right):
         s = 0
-        while(r > 0):
-            s += self.__data[r - 1]
-            r -= r & -r
-        return s
-
-    def __sum_mod(self, r: int):
-        s = 0
-        while(r > 0):
-            s += self.__data[r - 1]
-            s %= self.__mod
-            r -= r & -r
+        while right > 0:
+            s += self._data[right - 1]
+            right -= right & -right
         return s

@@ -15,3 +15,19 @@
 # import os
 # f = open('../../../input.txt', 'r')
 # sys.stdin = f
+
+n = int(input())
+music = []
+for _ in range(n):
+    title,time = input().split()
+    music.append([title,int(time)])
+x = input()
+
+ans = 0
+sleep = False
+for title,time in music:
+    if sleep:
+        ans += time
+    if title == x:
+        sleep = True
+print(ans)

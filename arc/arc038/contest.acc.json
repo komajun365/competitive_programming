@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc038",
+    "title": "AtCoder Regular Contest 038",
+    "url": "https://atcoder.jp/contests/arc038"
+  },
+  "tasks": [
+    {
+      "id": "arc038_a",
+      "label": "A",
+      "title": "カードと兄妹",
+      "url": "https://atcoder.jp/contests/arc038/tasks/arc038_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc038_b",
+      "label": "B",
+      "title": "マス目と駒",
+      "url": "https://atcoder.jp/contests/arc038/tasks/arc038_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc038_c",
+      "label": "C",
+      "title": "茶碗と豆",
+      "url": "https://atcoder.jp/contests/arc038/tasks/arc038_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc038_d",
+      "label": "D",
+      "title": "有向グラフと数",
+      "url": "https://atcoder.jp/contests/arc038/tasks/arc038_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

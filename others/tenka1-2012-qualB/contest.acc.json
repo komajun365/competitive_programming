@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "tenka1-2012-qualB",
+    "title": "天下一プログラマーコンテスト2012 予選B",
+    "url": "https://atcoder.jp/contests/tenka1-2012-qualB"
+  },
+  "tasks": [
+    {
+      "id": "tenka1_2012_5",
+      "label": "A",
+      "title": "孫子算経",
+      "url": "https://atcoder.jp/contests/tenka1-2012-qualB/tasks/tenka1_2012_5",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "tenka1_2012_6",
+      "label": "B",
+      "title": "camel_case",
+      "url": "https://atcoder.jp/contests/tenka1-2012-qualB/tasks/tenka1_2012_6",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "tenka1_2012_7",
+      "label": "C",
+      "title": "席が足りない",
+      "url": "https://atcoder.jp/contests/tenka1-2012-qualB/tasks/tenka1_2012_7",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "tenka1_2012_8",
+      "label": "D",
+      "title": "大爆発",
+      "url": "https://atcoder.jp/contests/tenka1-2012-qualB/tasks/tenka1_2012_8",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

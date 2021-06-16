@@ -1,0 +1,75 @@
+{
+  "contest": {
+    "id": "agc052",
+    "title": "AtCoder Grand Contest 052",
+    "url": "https://atcoder.jp/contests/agc052"
+  },
+  "tasks": [
+    {
+      "id": "agc052_a",
+      "label": "A",
+      "title": "Long Common Subsequence",
+      "url": "https://atcoder.jp/contests/agc052/tasks/agc052_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc052_b",
+      "label": "B",
+      "title": "Tree Edges XOR",
+      "url": "https://atcoder.jp/contests/agc052/tasks/agc052_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc052_c",
+      "label": "C",
+      "title": "Nondivisible Prefix Sums",
+      "url": "https://atcoder.jp/contests/agc052/tasks/agc052_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc052_d",
+      "label": "D",
+      "title": "Equal LIS",
+      "url": "https://atcoder.jp/contests/agc052/tasks/agc052_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc052_e",
+      "label": "E",
+      "title": "3 Letters",
+      "url": "https://atcoder.jp/contests/agc052/tasks/agc052_e",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc052_f",
+      "label": "F",
+      "title": "Tree Vertices XOR",
+      "url": "https://atcoder.jp/contests/agc052/tasks/agc052_f",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

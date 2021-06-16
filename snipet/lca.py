@@ -17,7 +17,7 @@ class LCA():
         
         self.log_d = (max(self.depth)).bit_length()
         for j in range(self.log_d - 1):
-            for i in range(n):
+            for i in range(self.n):
                 ancestor = self.dbl[i][j]
                 self.dbl[i].append(self.dbl[ancestor][j])
         

@@ -106,3 +106,37 @@ def crt(r, m):
         if r0 < 0:
             r0 += m0
     return [r0, m0]
+
+def floor_sum(n, m, a, b):
+    """
+    Σ^{n-1}_{0} ((a*i+b)//m)を計算する。
+
+    Parameters
+    ----------
+    n : int
+    m : int
+    a : int
+    b : int
+        0 <= n
+        1 <= m
+        0 <= a,b < m
+
+    Returns
+    -------
+    ans : int
+    """
+    ans = 0
+    while True:
+        if a >= m:
+            ans += (n - 1) * n * (a // m) // 2
+            a %= m
+        if b >= m:
+            ans += n * (b // m)
+            b %= m
+
+        y_max = (a * n + b) // m
+        x_max = y_max * m - b
+        if y_max == 0:
+            return ans
+        ans += (n - (x_max + a - 1) // a) * y_max
+        n, m, a, b = y_max, a, m, (a - x_max % a) % a

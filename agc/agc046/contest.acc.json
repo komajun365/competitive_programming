@@ -1,0 +1,75 @@
+{
+  "contest": {
+    "id": "agc046",
+    "title": "AtCoder Grand Contest 046",
+    "url": "https://atcoder.jp/contests/agc046"
+  },
+  "tasks": [
+    {
+      "id": "agc046_a",
+      "label": "A",
+      "title": "Takahashikun, The Strider",
+      "url": "https://atcoder.jp/contests/agc046/tasks/agc046_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc046_b",
+      "label": "B",
+      "title": "Extension",
+      "url": "https://atcoder.jp/contests/agc046/tasks/agc046_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc046_c",
+      "label": "C",
+      "title": "Shift",
+      "url": "https://atcoder.jp/contests/agc046/tasks/agc046_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc046_d",
+      "label": "D",
+      "title": "Secret Passage",
+      "url": "https://atcoder.jp/contests/agc046/tasks/agc046_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc046_e",
+      "label": "E",
+      "title": "Permutation Cover",
+      "url": "https://atcoder.jp/contests/agc046/tasks/agc046_e",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "agc046_f",
+      "label": "F",
+      "title": "Forbidden Tournament",
+      "url": "https://atcoder.jp/contests/agc046/tasks/agc046_f",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

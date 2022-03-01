@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc047",
+    "title": "AtCoder Regular Contest 047",
+    "url": "https://atcoder.jp/contests/arc047"
+  },
+  "tasks": [
+    {
+      "id": "arc047_a",
+      "label": "A",
+      "title": "タブの開きすぎ",
+      "url": "https://atcoder.jp/contests/arc047/tasks/arc047_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc047_b",
+      "label": "B",
+      "title": "同一円周上",
+      "url": "https://atcoder.jp/contests/arc047/tasks/arc047_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc047_c",
+      "label": "C",
+      "title": "N!÷K番目の単語",
+      "url": "https://atcoder.jp/contests/arc047/tasks/arc047_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc047_d",
+      "label": "D",
+      "title": "ナナメクエリ",
+      "url": "https://atcoder.jp/contests/arc047/tasks/arc047_d",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

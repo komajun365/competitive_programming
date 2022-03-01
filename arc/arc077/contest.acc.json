@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc077",
+    "title": "AtCoder Regular Contest 077",
+    "url": "https://atcoder.jp/contests/arc077"
+  },
+  "tasks": [
+    {
+      "id": "arc077_a",
+      "label": "C",
+      "title": "pushpush",
+      "url": "https://atcoder.jp/contests/arc077/tasks/arc077_a",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc077_b",
+      "label": "D",
+      "title": "11",
+      "url": "https://atcoder.jp/contests/arc077/tasks/arc077_b",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc077_c",
+      "label": "E",
+      "title": "guruguru",
+      "url": "https://atcoder.jp/contests/arc077/tasks/arc077_c",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc077_d",
+      "label": "F",
+      "title": "SS",
+      "url": "https://atcoder.jp/contests/arc077/tasks/arc077_d",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}

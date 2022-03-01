@@ -1,0 +1,53 @@
+{
+  "contest": {
+    "id": "arc078",
+    "title": "AtCoder Regular Contest 078",
+    "url": "https://atcoder.jp/contests/arc078"
+  },
+  "tasks": [
+    {
+      "id": "arc078_a",
+      "label": "C",
+      "title": "Splitting Pile",
+      "url": "https://atcoder.jp/contests/arc078/tasks/arc078_a",
+      "directory": {
+        "path": "c",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc078_b",
+      "label": "D",
+      "title": "Fennec VS. Snuke",
+      "url": "https://atcoder.jp/contests/arc078/tasks/arc078_b",
+      "directory": {
+        "path": "d",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc078_c",
+      "label": "E",
+      "title": "Awkward Response",
+      "url": "https://atcoder.jp/contests/arc078/tasks/arc078_c",
+      "directory": {
+        "path": "e",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    },
+    {
+      "id": "arc078_d",
+      "label": "F",
+      "title": "Mole and Abandoned Mine",
+      "url": "https://atcoder.jp/contests/arc078/tasks/arc078_d",
+      "directory": {
+        "path": "f",
+        "testdir": "tests",
+        "submit": "main.py"
+      }
+    }
+  ]
+}
